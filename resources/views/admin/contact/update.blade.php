@@ -49,7 +49,7 @@
 		<input name="instagram" class="form-control"  value="{{$contact->instagram}}" id="comment" required>
 		
 	</div>
-	<button  type="submit" class="btn btn-primary"><i style="color: white" class="fa fa-plus" aria-hidden="true"></i> Edit Contact</button>
+	<button  type="submit" class="btn btn-primary"><i style="color: white" class="fa fa-plus" aria-hidden="true"></i> Edit {{Request::segment(2)}}</button>
 </form>
 	</div>
 @endsection

@@ -15,13 +15,13 @@ class Service extends Model
         return $this->HasMany('App\ServiceImage');
     }
 
-     public static function get_all()
+     public static function service_index()
     {
         $services = Service::with('images')->get();
         return $services;
     }
 
-      public static function get($id)
+      public static function service_show($id)
     {
         $Service = Service::where('id',$id)->with('images')->first();
         return $Service;

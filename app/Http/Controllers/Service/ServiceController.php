@@ -58,7 +58,7 @@ class ServiceController extends Controller
              serviceImage::services_image_insert($service->id,$img_name);
             
              }
-             return redirect('/admin/services/index');
+             return redirect('/admin/service/index');
         }
     return Redirect::back()->withErrors('The image input must not be empty');
 

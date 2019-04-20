@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Nordic Admin</title>
+  <title>CT Clinic</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Custom fonts for this template-->
   <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a title="nordic admin logo" class="navbar-brand mr-1" href="/admin_page">Nordic Admin</a>
+    <a style="color: green;font-weight: bold;" title="nordic admin logo" class="navbar-brand mr-1" href="/admin_page">CT Clinic</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -93,12 +93,7 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/admin_page">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
+ 
 
       <li class="nav-item">
         <a class="nav-link" href="/admin/users/index">
@@ -108,22 +103,12 @@
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/admin/services/index">
+        <a class="nav-link" href="/admin/service/index">
           <i class="fas fa-fw fa-cart-plus"></i>
           <span>Services</span></a>
       </li>
 
-          <li class="nav-item">
-        <a class="nav-link" href="/admin/sliders/index">
-          <i class="fas fa-fw fa-file-image-o"></i>
-          <span>Slider</span></a>
-      </li>
-
-           <li class="nav-item">
-        <a class="nav-link" href="/admin/testimonials/index">
-          <i class="fas fa-fw fa-file-image-o"></i>
-          <span>Testimonial</span></a>
-      </li>
+       
 
               <li class="nav-item">
         <a class="nav-link" href="/admin/contact/index">
@@ -132,11 +117,7 @@
       </li>
 
 
-                 <li class="nav-item">
-        <a class="nav-link" href="/admin/galleries/index">
-          <i class="fas fa-fw fa-file-image-o"></i>
-          <span>Galleries</span></a>
-      </li>
+   
 
 
 

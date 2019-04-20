@@ -9,7 +9,7 @@
 @endif
 
 	<div class="col-6">
-<form  class="container" action='/admin/services/create' method="POST" enctype="multipart/form-data">
+<form  class="container" action='/admin/{{Request::segment(2)}}/create' method="POST" enctype="multipart/form-data">
 	@csrf
 
 			<div class="form-group">
@@ -35,7 +35,7 @@
 	<label for="exampleInputEmail1">Image</label>
 	<input class="active" type="file" name="img_name[]" enctype="multipart/form-data" required multiple>
 	<br><br>
-	<button  type="submit" class="btn btn-success"><i style="color: white" class="fa fa-plus" aria-hidden="true"></i> Create Product</button>
+	<button  type="submit" class="btn btn-success"><i style="color: white" class="fa fa-plus" aria-hidden="true"></i> Create {{Request::segment(2)}}</button>
 </form>
 	</div>
 @endsection
