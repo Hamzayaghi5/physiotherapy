@@ -40,8 +40,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
     <!-- //header -->
-    <header class="py-sm-3 pt-3 pb-2" id="home">
-        <div class="container">
+    <header class="py-sm-2 pt-3 pb-2" id="home">
+        <div class="container-fluid">
             <!-- nav -->
 <!--             <div class="top d-md-flex">
                 <div id="logo">
@@ -69,25 +69,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <img src="{{ asset('main_site/images/logo.jpeg') }}" class="img-responsive" style="width:100px;height: 80px;">
                 </div>
                 	</li>
-                    <li class="active"><a href="events.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="#choose_us">why choose us</a></li>
+                    <li><a href="#what_we_treat">what we treat</a></li>
+                    
                     <li>
                         <!-- First Tier Drop Down -->
                         <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
                         </label>
-                        <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <a href="#">Services<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                         <input type="checkbox" id="drop-2" />
-                        <ul>
+                        <ul id="services">
                             <li><a href="services.html" class="drop-text">Services</a></li>
                             <li><a href="#stats" class="drop-text">Statistics</a></li>
                             <li><a href="#test" class="drop-text">Reviews</a></li>
                             <li><a href="single.html" class="drop-text">More Info</a></li>
-
                         </ul>
                     </li>
 
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="career.html">career</a></li>
+                    <li><a href="Our_team.html">Our Team</a></li>
+                    <li><a href="FAQ">FaQ</a></li>
                 </ul>
             </nav>
             <!-- //nav -->
@@ -99,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
  
     <footer class="footer-content py-5">
-        <div class="container-fluid py-lg-5 inner-sec-w3ls">
+        <div class="container py-lg-5 inner-sec-w3ls">
             <div class="row">
                 <div class="col-lg-4 footer-top mt-md-0 mt-sm-5 pr-lg-5">
                     <div id="logo">
@@ -240,5 +242,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<script type="text/javascript" src="{{ asset('main_site/js/services.js') }}"></script>
+<script type="text/javascript">
+    services();
+</script>
 </html>

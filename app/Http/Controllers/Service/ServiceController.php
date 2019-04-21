@@ -16,13 +16,13 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services=Service::get_all();
+        $services=Service::service_index();
         return view('admin.service.index',compact('services'));
     }
 
         public function index_api()
     {
-        $services=Service::get_all();
+        $services=Service::service_index();
         return compact('services');
     }
 

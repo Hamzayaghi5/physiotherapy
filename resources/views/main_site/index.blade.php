@@ -22,7 +22,7 @@ Our unique, Comprehensive Treatment (CT) system utilises a holistic approach to 
 
     <!--// mian-content -->
     <!-- //about -->
-    <section class="banner-bottom py-5">
+    <section class="banner-bottom py-5" id="choose_us">
         <div class="container py-md-5">
             <div class="row banner-grids mb-lg-5">
 
@@ -70,7 +70,7 @@ Pain is caused by the accumulation of lactic acid in the soft tissue. Our unique
     </section>
 
 
-        <section class="banner-bottom py-5">
+        <section class="banner-bottom py-5" id="what_we_treat">
         <div class="container py-md-5">
             <div class="row banner-grids mb-lg-5">
    				

@@ -45,3 +45,22 @@
      }
 });
   }
+
+    function social() {
+      $.ajax({
+     type: "GET",
+     url: '/api/services',
+     data: "check",
+     success: function(response){
+        var services=response.services;
+        console.log(services)
+
+        
+
+
+       
+
+
+     }
+});
+  }
