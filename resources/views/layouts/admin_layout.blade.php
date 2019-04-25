@@ -10,7 +10,7 @@
   <meta name="author" content="">
 
   <title>CT Clinic</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Custom fonts for this template-->
   <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 
@@ -174,6 +174,14 @@
   <script src="{{ asset('admin/js/demo/datatables-demo.js') }}"></script>
   <script src="{{ asset('admin/js/demo/chart-area-demo.js') }}"></script>
 
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+  $(document).ready(function() {
+  $('.summernote').summernote();
+});
+</script>
 </body>
 
 </html>

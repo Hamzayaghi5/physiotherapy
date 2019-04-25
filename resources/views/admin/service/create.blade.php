@@ -20,14 +20,14 @@
 
 				<div class="form-group">
 		<label for="exampleInputEmail1">Product Main Description</label>
-		<textarea name="main_description" class="form-control" rows="5" id="comment" required></textarea>
+		<textarea name="main_description" class="form-control summernote" rows="5" id="comment" required></textarea>
 		
 	</div>
 
 
 					<div class="form-group">
 		<label for="exampleInputEmail1">Product Sub Description</label>
-		<textarea name="sub_description" class="form-control" rows="5" id="comment" required></textarea>
+		<textarea name="sub_description" class="form-control summernote" rows="5" id="comment" required></textarea>
 		
 	</div>
 

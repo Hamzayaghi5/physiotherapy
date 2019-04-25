@@ -30,7 +30,6 @@
                     <th>#</th>
                     <th>title</th>
                     <th>main_description</th>
-                    <th>sub_description</th>
                     <th>image</th>
                     <th>created_at</th>
                     <th>Operations</th>
@@ -42,12 +41,11 @@
                   <tr>
                     <td>{{$service->id }}</td>
                     <td>{{$service->title }}</td>
-                    <td>{{$service->main_description }}</td>
-                    <td>{{$service->sub_description }}</td>
+                    <td>{!!$service->main_description !!}</td>
                        <td><img class="img-responsive col-md" src="{{env('image_storage') }}/{{$service->images[0]->image}}"></td>
                     <td>{{$service->created_at }}</td>
                     <td style="width: 17%;"><div class="container">
-                      <div  class="row"><a style="margin-left:1%" href="/admin/services/update/{{$service->id}}"><button class="btn btn-primary" aria-hidden="true">Edit</button></a><a  style="margin-left:1%;color:rgba(204, 0, 0, 1);" onclick="return confirm('Are you sure you want to delete this service')" href="/admin/services/delete/{{$service->id}}"><button class="btn btn-danger" aria-hidden="true">Delete</button></a></div>
+                      <div  class="row"><a style="margin-left:1%" href="/admin/{{Request::segment(2)}}/update/{{$service->id}}"><button class="btn btn-primary" aria-hidden="true">Edit</button></a><a  style="margin-left:1%;color:rgba(204, 0, 0, 1);" onclick="return confirm('Are you sure you want to delete this service')" href="/admin/{{Request::segment(2)}}/delete/{{$service->id}}"><button class="btn btn-danger" aria-hidden="true">Delete</button></a></div>
                       </div>
                     <div>
                     </td>

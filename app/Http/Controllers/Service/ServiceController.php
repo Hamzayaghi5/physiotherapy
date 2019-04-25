@@ -85,7 +85,7 @@ class ServiceController extends Controller
      */
     public function edit($id,service $service)
     {
-        $service=Service::get($id);
+        $service=Service::service_show($id);
         return view('admin.service.update',compact('service'));
     }
 
@@ -99,6 +99,7 @@ class ServiceController extends Controller
     public function update(Request $request)
     {   
              $data=$request->all();
+             $id=$request['id'];
              $title=$data['title'];
              $main_description=$data['main_description'];
         $sub_description=$data['sub_description'];
@@ -111,16 +112,16 @@ class ServiceController extends Controller
              serviceImage::services_image_insert($service->id,$img_name);
             
              }
-             return redirect('/admin/services/index');
+             return redirect('/admin/service/index');
         }
     else
     {
-        $service=Service::get($id);
+        $service=Service::service_show($id);
         Service::service_update($id,$title,$main_description,$sub_description);
     }
 
        
-         return redirect('/admin/services/index');
+         return redirect('/admin/service/index');
 
     }
 

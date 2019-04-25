@@ -25,7 +25,7 @@
                 	@endforeach
                     
                     <h4>what is {{$service->title}}:</h4>
-                    <p>{{$service->main_description}}</p>
+                    <p>{!!$service->main_description!!}</p>
 
                 </div>
             </div>

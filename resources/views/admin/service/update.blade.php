@@ -12,14 +12,14 @@
 
 				<div class="form-group">
 		<label for="exampleInputEmail1">service Description</label>
-		<textarea name="main_description" class="form-control" rows="5" id="comment" required>{{$service->main_description}}</textarea>
+		<textarea name="main_description" class="form-control summernote" rows="5" id="comment" required>{{$service->main_description}}</textarea>
 		
 	</div>
 
 
 				<div class="form-group">
 		<label for="exampleInputEmail1">service Description</label>
-		<textarea name="sub_description" class="form-control" rows="5" id="comment" required>{{$service->sub_description}}</textarea>
+		<textarea name="sub_description" class="form-control summernote" rows="5" id="comment" required>{{$service->sub_description}}</textarea>
 		
 	</div>
 
