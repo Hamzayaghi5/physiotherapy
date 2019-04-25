@@ -17,7 +17,7 @@
 
 Route::get('/', 'SiteController@index');
 
-Route::get('/service_single/{id}', 'SiteController@service_single');
+
 
 Auth::routes();
 
@@ -48,4 +48,23 @@ Route::get('admin/contact/index', 'ContactController@index');
 Route::get('admin/contact/update/{id}', 'ContactController@edit');
 
 Route::post('admin/contact/update/{id}', 'ContactController@update');
+
+//***************************************************************************************************************************
+
+Route::get('admin/page/index', 'PageController@index');
+
+Route::get('admin/page/create', 'PageController@create');
+
+Route::post('admin/page/create', 'PageController@store');
+
+Route::get('admin/page/update/{id}', 'PageController@edit');
+
+Route::post('admin/page/update/{id}', 'PageController@update');
+
+Route::get('admin/page/delete/{id}', 'PageController@delete');
+
+
+Route::get('/service_single/{id}', 'SiteController@service_single');
+
+Route::get('/main/{link}', 'SiteController@get_page');
 });

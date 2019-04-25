@@ -139,6 +139,10 @@ class ServiceController extends Controller
         public function delete(Request $request)
     {
         $id=$request['id'];
+        $service=Service::service_show($id);
+        foreach ($service->images as $key => $image) {
+            Storage::delete('public'.$image->image);
+        }
         Service::service_delete($id);
         return redirect('/admin/services/index');
     }

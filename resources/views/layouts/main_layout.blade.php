@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!-- nav -->
 <!--             <div class="top d-md-flex">
                 <div id="logo">
-                    <img src="./images/logo.jpeg" class="img-responsive" style="width:100px;height: 80px;">
+                    <img src="./images/logo.png" class="img-responsive" style="width:100px;height: 80px;">
                 </div>
                 <div class="search-form mx-md-auto">
                     <div class="form-w3layouts-grid">
@@ -66,11 +66,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <ul class="menu">
                 	<li>
                 		                <div id="logo">
-                    <img src="{{ asset('main_site/images/logo.jpeg') }}" class="img-responsive" style="width:100px;height: 80px;">
+                    <img src="{{ asset('main_site/images/logo.png') }}" class="img-fluid" style="width:100px;height: 50px;">
                 </div>
                 	</li>
                     <li class="active"><a href="/">Home</a></li>
-                    <li><a href="#choose_us">why choose us</a></li>
+                        <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                        </label>
+                        <a href="#">Why Choose Us<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul id="why_choose_us">
+                        </ul>
+                    </li>
+
                     <li><a href="#what_we_treat">what we treat</a></li>
                     
                     <li>
@@ -105,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="row">
                 <div class="col-lg-4 footer-top mt-md-0 mt-sm-5 pr-lg-5">
                     <div id="logo">
-                    <img src="{{ asset('main_site/images/logo.jpeg') }}" class="img-responsive" style="width:100px;height: 80px;">
+                    <img src="{{ asset('main_site/images/logo.png') }}" class="img-responsive" style="width:100px;height: 50px;">
                 </div>
                     <p class="my-3">Donec consequat sam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus</p>
 
@@ -247,5 +256,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="{{ asset('main_site/js/services.js') }}"></script>
 <script type="text/javascript">
     services();
+    why_choose_us();
 </script>
 </html>

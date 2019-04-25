@@ -14,7 +14,14 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $pages=Page::page_index();
+        return view('admin.page.index',compact('pages'));
+    }
+
+      public function index_api()
+    {
+        $pages=Page::page_index();
+        return compact('pages');
     }
 
     /**
@@ -24,7 +31,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.page.create');
     }
 
     /**
@@ -35,7 +42,21 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $name=$request['name'];
+            $link=$request['link'];
+            $description=$request['description'];
+    if($request->hasFile('img_name'))
+        {  
+            $file=$request->file('img_name');                  
+            $imagename=$file->getClientOriginalName();
+            $path_img=$file->storeAs('public/',$imagename.time());
+            $img_name=str_replace('public/', '', $path_img);
+            Page::page_create($name,$description,$img_name,$link);
+
+            return redirect('/admin/page/index');
+        }   
+
+            return Redirect::back()->withErrors('The image input must not be empty');
     }
 
     /**
@@ -57,7 +78,9 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+          $page=Page::page_show($id);
+          return view('admin.page.update',compact('page'));
+        
     }
 
     /**
@@ -69,7 +92,24 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+            $id=$request['id'];
+            $name=$request['name'];
+            $link=$request['link'];
+            $description=$request['description'];
+    if($request->hasFile('img_name'))
+        {  
+            $file=$request->file('img_name');                  
+            $imagename=$file->getClientOriginalName();
+            $path_img=$file->storeAs('public/',$imagename.time());
+            $img_name=str_replace('public/', '', $path_img);
+            Page::page_update($id,$name,$description,$img_name,$link);
+
+            return redirect('/admin/page/index');
+        }   
+
+        $page=Page::page_show($id);
+          Page::page_update($id,$name,$description,$page->image,$link);
+           return redirect('/admin/page/index');
     }
 
     /**
@@ -78,8 +118,12 @@ class PageController extends Controller
      * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function delete(Request $request)
     {
-        //
+        $id=$request['id'];
+        $page=Page::page_show($id);
+        Storage::delete('public'.$page->image);
+        $page->delete();
+        return redirect('/admin/page/index');
     }
 }

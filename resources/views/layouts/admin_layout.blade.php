@@ -117,6 +117,12 @@
       </li>
 
 
+                <li class="nav-item">
+        <a class="nav-link" href="/admin/page/index">
+          <i class="fas fa-fw fa-file-image-o"></i>
+          <span>Pages</span></a>
+      </li>
+
    
 
 

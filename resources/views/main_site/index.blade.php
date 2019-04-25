@@ -7,7 +7,7 @@
             <div class="container">
                 <!-- /banner -->
                 <div class="banner-info text-left">
-                    <h3><span style="color:#16c54d;">CT</span>Clinic</h3>
+                    <h3><span style="color:#00ac6b;">CT</span>Clinic</h3>
                     <p class="my-3">CT Clinic is the leading specialist pain treatment centre in Manchester. We aim to transform people’s lives by not only managing their pain, but addressing the causes. 
 Our unique, Comprehensive Treatment (CT) system utilises a holistic approach to achieve long-term results. 
 </p>
