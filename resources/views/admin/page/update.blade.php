@@ -1,28 +1,29 @@
 @extends('layouts.admin_layout')
 @section('content')
 	<div class="col-6">
-<form  class="container" action='/admin/{{Request::segment(2)}}/update/{{$service->id}}' method="POST" enctype="multipart/form-data">
+<form  class="container" action='/admin/{{Request::segment(2)}}/update/{{$page->id}}' method="POST" enctype="multipart/form-data">
 	@csrf
 
 			<div class="form-group">
-		<label for="exampleInputEmail1">service Title</label>
-		<input value="{{$service->title}}" name="title" class="form-control"  id="comment" required>
+		<label for="exampleInputEmail1">{{Request::segment(2)}} Title</label>
+		<input value="{{$page->name}}" name="name" class="form-control"  id="comment" required>
 		
 	</div>
+
+		
 
 				<div class="form-group">
-		<label for="exampleInputEmail1">service Description</label>
-		<textarea name="main_description" class="form-control summernote" rows="5" id="comment" required>{{$service->main_description}}</textarea>
+		<label for="exampleInputEmail1">{{Request::segment(2)}} Description</label>
+		<textarea name="description" class="form-control summernote" rows="5" id="comment" required>{{$page->description}}</textarea>
 		
 	</div>
 
 
-				<div class="form-group">
-		<label for="exampleInputEmail1">service Description</label>
-		<textarea name="sub_description" class="form-control summernote" rows="5" id="comment" required>{{$service->sub_description}}</textarea>
+		<div class="form-group">
+		<label for="exampleInputEmail1">{{Request::segment(2)}} Title</label>
+		<input value="{{$page->link}}" name="link" class="form-control"  id="comment" required>
 		
 	</div>
-
 
 	<label for="exampleInputEmail1">Image</label>
 	<input class="active" type="file" name="img_name" enctype="multipart/form-data">

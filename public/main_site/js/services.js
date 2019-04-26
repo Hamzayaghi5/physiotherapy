@@ -36,3 +36,27 @@
      }
 });
   }
+
+
+
+        function what_we_treat() {
+         $("#what_we_treat").html("");
+         var services_value="";
+      $.ajax({
+     type: "GET",
+     url: '/api/what_we_treat',
+     data: "check",
+     success: function(response){
+        var pages=response.pages;
+        console.log(pages);
+        for(var i = 0, length1 = pages.length; i < length1; i++){
+        services_value+="<li><a href='/main"+pages[i].link+"' class='drop-text'>"+pages[i].name+"</a></li>";
+        }
+
+                $("#what_we_treat").html(services_value);
+     }
+});
+  }
+
+
+  

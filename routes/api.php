@@ -20,4 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/services','ServiceController@index_api');
 
 
-Route::get('/pages','PageController@index_api');
+Route::get('/pages','PageController@who_we_are');
+
+Route::get('/what_we_treat','PageController@what_we_treat');
+
+

@@ -19,6 +19,20 @@ class Page extends Model
     }
 
 
+      public static function who_we_are()
+    {
+        $page = Page::where('id','<','4')->get();
+        return $page;
+    }
+
+       public static function what_we_treat()
+    {
+        $page = Page::where('id','>','3')->get();
+        return $page;
+    }
+
+
+
       public static function page_show($id)
     {
         $page = Page::find($id);

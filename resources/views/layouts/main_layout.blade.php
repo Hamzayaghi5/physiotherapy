@@ -80,7 +80,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </ul>
                     </li>
 
-                    <li><a href="#what_we_treat">what we treat</a></li>
+
+                         <li>
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                        </label>
+                        <a href="#">What We Treat<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2" />
+                        <ul id="what_we_treat">
+                        </ul>
+                    </li>
                     
                     <li>
                         <!-- First Tier Drop Down -->
@@ -257,5 +266,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript">
     services();
     why_choose_us();
+    what_we_treat();
 </script>
 </html>
