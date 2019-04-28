@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Page;
+use App\Team;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-class PageController extends Controller
+
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,23 +14,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages=Page::page_index();
-        return view('admin.page.index',compact('pages'));
+        $teams=Team::team_index();
+        return view('admin.team.index',compact('teams'));
     }
-
-      public function who_we_are()
-    {
-        $pages=Page::who_we_are();
-        return compact('pages');
-    }
-
-
-    public function what_we_treat()
-    {
-        $pages=Page::what_we_treat();
-        return compact('pages');
-    }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +25,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.page.create');
+        return view('admin.team.create');
     }
 
     /**
@@ -51,17 +37,16 @@ class PageController extends Controller
     public function store(Request $request)
     {
             $name=$request['name'];
-            $link=$request['link'];
             $description=$request['description'];
     if($request->hasFile('img_name'))
         {  
             $file=$request->file('img_name');                  
             $imagename=$file->getClientOriginalName();
-            $path_img=$file->storeAs('public/',time().$imagename);
+            $path_img=$file->storeAs('public/',$imagename.time());
             $img_name=str_replace('public/', '', $path_img);
-            Page::page_create($name,$description,$img_name,$link);
+            Team::team_create($name,$description,$img_name);
 
-            return redirect('/admin/page/index');
+            return redirect('/admin/team/index');
         }   
 
             return Redirect::back()->withErrors('The image input must not be empty');
@@ -70,10 +55,10 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(Team $team)
     {
         //
     }
@@ -81,57 +66,55 @@ class PageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Page  $page
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-          $page=Page::page_show($id);
-          return view('admin.page.update',compact('page'));
-        
+        $team=Team::team_show($id);
+        return view('admin.team.update',compact('team'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Page  $page
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, Team $team)
     {
-            $id=$request['id'];
+         $id=$request['id'];
             $name=$request['name'];
-            $link=$request['link'];
             $description=$request['description'];
     if($request->hasFile('img_name'))
         {  
             $file=$request->file('img_name');                  
             $imagename=$file->getClientOriginalName();
-            $path_img=$file->storeAs('public/',time().$imagename);
+            $path_img=$file->storeAs('public/',$imagename.time());
             $img_name=str_replace('public/', '', $path_img);
-            Page::page_update($id,$name,$description,$img_name,$link);
+            Team::team_update($id,$name,$description,$img_name);
 
-            return redirect('/admin/page/index');
+            return redirect('/admin/team/index');
         }   
 
-        $page=Page::page_show($id);
-          Page::page_update($id,$name,$description,$page->image,$link);
-           return redirect('/admin/page/index');
+        $team=Team::team_show($id);
+          Team::team_update($id,$name,$description,$team->image);
+           return redirect('/admin/team/index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Page  $page
+     * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function delete(Request $request)
+     public function delete(Request $request)
     {
         $id=$request['id'];
-        $page=Page::page_show($id);
-        Storage::delete('public'.$page->image);
-        $page->delete();
-        return redirect('/admin/page/index');
+        $team=Team::team_show($id);
+        Storage::delete('public'.$team->image);
+        $team->delete();
+        return redirect('/admin/team/index');
     }
 }

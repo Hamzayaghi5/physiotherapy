@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Testimonial;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class TestimonialController extends Controller
 {
     /**

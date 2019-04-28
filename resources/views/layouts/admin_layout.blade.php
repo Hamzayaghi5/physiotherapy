@@ -123,6 +123,15 @@
           <span>Pages</span></a>
       </li>
 
+
+
+                <li class="nav-item">
+        <a class="nav-link" href="/admin/team/index">
+          <i class="fas fa-fw fa-file-image-o"></i>
+          <span>Team</span></a>
+      </li>
+
+
    
 
 

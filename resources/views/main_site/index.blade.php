@@ -116,4 +116,29 @@ Pain is caused by the accumulation of lactic acid in the soft tissue. Our unique
             </div>
         </div>
     </section>
+
+       <section class="services py-5" id="team">
+        <div class="container py-md-5">
+            <h3 class="title-w3pvt text-center mb-5">Our Trainers</h3>
+            <div class="row team-grids text-left mt-md-5 mt-4">
+                @foreach ($teams as $team)
+                    {{-- expr --}}
+               <a href="/team_single/{{$team->id}}">
+                <div class="col-lg-4 team-main">
+
+                    <div class="team-img"><img src="{{env('image_storage')}}/{{$team->image}}" alt="news image" class="img-fluid"> </div>
+                    <div class="team-info">
+
+                        <h4>{{$team->name}}</h4>
+                    </div>
+
+
+                </div>
+            </a>
+                 @endforeach
+
+            </div>
+
+        </div>
+    </section>
 @endsection

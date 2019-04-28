@@ -30,7 +30,6 @@
                     <th>#</th>
                     <th>name</th>
                     <th>description</th>
-                    <th>link</th>
                     <th>image</th>
                     <th>created_at</th>
                     <th>Operations</th>
@@ -38,16 +37,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($pages as $page)
+                  @foreach($teams as $team)
                   <tr>
-                    <td>{{$page->id }}</td>
-                    <td>{{$page->name }}</td>
-                    <td>{!!$page->description !!}</td>
-                    <td>{!!$page->link !!}</td>
-                       <td><img class="img-responsive col-md" src="{{env('image_storage') }}/{{$page->image}}"></td>
-                    <td>{{$page->created_at }}</td>
+                    <td>{{$team->id }}</td>
+                    <td>{{$team->name }}</td>
+                    <td>{!!$team->description !!}</td>
+                       <td><img class="img-responsive col-md" src="{{env('image_storage') }}/{{$team->image}}"></td>
+                    <td>{{$team->created_at }}</td>
                     <td style="width: 17%;"><div class="container">
-                      <div  class="row"><a style="margin-left:1%" href="/admin/{{Request::segment(2)}}/update/{{$page->id}}"><button class="btn btn-primary" aria-hidden="true">Edit</button></a><a  style="margin-left:1%;color:rgba(204, 0, 0, 1);" onclick="return confirm('Are you sure you want to delete this page')" href="/admin/{{Request::segment(2)}}/delete/{{$page->id}}"><button class="btn btn-danger" aria-hidden="true">Delete</button></a></div>
+                      <div  class="row"><a style="margin-left:1%" href="/admin/{{Request::segment(2)}}/update/{{$team->id}}"><button class="btn btn-primary" aria-hidden="true">Edit</button></a><a  style="margin-left:1%;color:rgba(204, 0, 0, 1);" onclick="return confirm('Are you sure you want to delete this team')" href="/admin/{{Request::segment(2)}}/delete/{{$team->id}}"><button class="btn btn-danger" aria-hidden="true">Delete</button></a></div>
                       </div>
                     <div>
                     </td>

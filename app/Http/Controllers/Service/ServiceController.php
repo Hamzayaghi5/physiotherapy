@@ -6,6 +6,7 @@ use App\Service;
 use Illuminate\Http\Request;
 use App\Category;
 use App\ServiceImage;
+use Illuminate\Support\Facades\Storage;
 use Redirect;
 class ServiceController extends Controller
 {

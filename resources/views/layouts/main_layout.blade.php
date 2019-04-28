@@ -32,6 +32,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
     <link href="{{ asset('main_site/css/font-awesome.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
     <!-- //font-awesome-icons -->
     <!-- /Fonts -->
     <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700" rel="stylesheet">
@@ -121,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <footer class="footer-content py-5">
         <div class="container py-lg-5 inner-sec-w3ls">
             <div class="row">
-                <div class="col-lg-4 footer-top mt-md-0 mt-sm-5 pr-lg-5">
+                <div class="col-lg-3 footer-top mt-md-0 mt-sm-5 pr-lg-5">
                     <div id="logo">
                     <img src="{{ asset('main_site/images/logo.png') }}" class="img-responsive" style="width:100px;height: 50px;">
                 </div>
@@ -196,20 +200,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
           
 
-                <div class="col-lg-2  mt-lg-0 mt-5">
+                <div class="col-lg-3  mt-lg-0 mt-5">
                     <div class="footer-w3pvt">
                         <h3 class="mb-3 w3pvt_title">Contact Us</h3>
                         <hr>
                         <div class="last-w3layouts-contact">
-                            <p>
+                            <p id="email">
                                 <a href="mailto:example@email.com">info@example.com</a>
                             </p>
                         </div>
                         <div class="last-w3layouts-contact my-2">
-                            <p>+ 456 123 7890</p>
+                            <p id="phone">+ 456 123 7890</p>
                         </div>
                         <div class="last-w3layouts-contact">
-                            <p>+ 90 nsequursu dsdesdc,
+                            <p id="address">+ 90 nsequursu dsdesdc,
                                 <br>xxx Honey State 049436.</p>
                         </div>
                     </div>
@@ -263,9 +267,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript" src="{{ asset('main_site/js/services.js') }}"></script>
+<script type="text/javascript" src="{{ asset('main_site/js/contacts.js') }}"></script>
 <script type="text/javascript">
     services();
     why_choose_us();
     what_we_treat();
+    social();
 </script>
 </html>
