@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use App\Page;
 use App\Team;
+use App\Testimonial;
 class SiteController extends Controller
 {
     
@@ -37,5 +38,11 @@ class SiteController extends Controller
         $link='/'.$request['link'];
         $page=Page::page_show_by_name($link);
         return view ('main_site.why_choose_us',compact('page'));
+    }
+
+    public function get_testimonials()
+    {
+        $testimonial=Testimonial::get_testimonials();
+        return view('main_site.testimonials',compact('testimonials'));
     }
 }

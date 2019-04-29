@@ -14,7 +14,8 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        //
+        $testimonials=Testimonial::testimonial_index();
+        return view('admin.testimonial.index',compact('testimonials'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TestimonialController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.testimonial.create');
     }
 
     /**
@@ -35,16 +36,30 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $name=$request['name'];
+            $testimonial=$request['testimonial'];
+            $type=$request['type'];
+    if($request->hasFile('img_name'))
+        {  
+            $file=$request->file('img_name');                  
+            $imagename=$file->getClientOriginalName();
+            $path_img=$file->storeAs('public/',$imagename);
+            $img_name=str_replace('public/', '', $path_img);
+           $testimonial1= Testimonial::testimonial_create($name,$testimonial,$img_name,$type);
+            return $testimonial1;
+            // return redirect('/admin/testimonial/index');
+        }   
+
+            return Redirect::back()->withErrors('The image input must not be empty');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Testimonial  $testimonial
+     * @param  \App\testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function show(Testimonial $testimonial)
+    public function show(testimonial $testimonial)
     {
         //
     }
@@ -52,34 +67,55 @@ class TestimonialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Testimonial  $testimonial
+     * @param  \App\testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial)
+    public function edit($id)
     {
-        //
+        $testimonial=Testimonial::testimonial_show($id);
+        return view('admin.testimonial.update',compact('testimonial'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Testimonial  $testimonial
+     * @param  \App\testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, testimonial $testimonial)
     {
-        //
+            $name=$request['name'];
+            $testimonial=$request['testimonial'];
+            $type=$request['type'];
+    if($request->hasFile('img_name'))
+        {  
+            $file=$request->file('img_name');                  
+            $imagename=$file->getClientOriginalName();
+            $path_img=$file->storeAs('public/',$imagename.time());
+            $img_name=str_replace('public/', '', $path_img);
+            Testimonial::testimonial_update($id,$name,$description,$img_name,$type);
+
+            return redirect('/admin/testimonial/index');
+        }   
+
+        $testimonial=Testimonial::testimonial_show($id);
+          Testimonial::testimonial_update($id,$name,$description,$testimonial->image,$type);
+           return redirect('/admin/testimonial/index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Testimonial  $testimonial
+     * @param  \App\testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testimonial $testimonial)
+     public function delete(Request $request)
     {
-        //
+        $id=$request['id'];
+        $testimonial=Testimonial::testimonial_show($id);
+        Storage::delete('public'.$testimonial->image);
+        $testimonial->delete();
+        return redirect('/admin/testimonial/index');
     }
 }

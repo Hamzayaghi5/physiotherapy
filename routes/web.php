@@ -76,9 +76,27 @@ Route::post('admin/team/update/{id}', 'TeamController@update');
 Route::get('admin/team/delete/{id}', 'TeamController@delete');
 
 //*****************************************************************************************************************
+Route::get('admin/testimonial/index', 'TestimonialController@index');
+
+Route::get('admin/testimonial/create', 'TestimonialController@create');
+
+Route::post('admin/testimonial/create', 'TestimonialController@store');
+
+Route::get('admin/testimonial/update/{id}', 'TestimonialController@edit');
+
+Route::post('admin/testimonial/update/{id}', 'TestimonialController@update');
+
+Route::get('admin/testimonial/delete/{id}', 'TestimonialController@delete');
+
+//*****************************************************************************************************************
+
+});
 Route::get('/service_single/{id}', 'SiteController@service_single');
 
 Route::get('/team_single/{id}', 'SiteController@team_single');
 
 Route::get('/main/{link}', 'SiteController@get_page');
-});
+
+Route::get('/testimonials', 'SiteController@get_testimonials');
+
+

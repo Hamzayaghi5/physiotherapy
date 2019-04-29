@@ -132,6 +132,14 @@
       </li>
 
 
+
+                <li class="nav-item">
+        <a class="nav-link" href="/admin/testimonial/index">
+          <i class="fas fa-fw fa-file-image-o"></i>
+          <span>Testimonials</span></a>
+      </li>
+
+
    
 
 
