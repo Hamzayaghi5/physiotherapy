@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Testimonial extends Model
 {
-            protected $fillable = [
+                protected $fillable = [
         'name','testimonial','url','type',
     ];
 
@@ -25,23 +25,23 @@ class Testimonial extends Model
 
 
 
-       public static function testimonial_create($name,$testimonial,$url,$type)
+       public static function testimonial_create($name,$testimonial_text,$url,$type)
     {
         $testimonial = new testimonial;
         $testimonial->name=$name;
-        $testimonial->testimonial=$testimonial;
+        $testimonial->testimonial=$testimonial_text;
         $testimonial->url=$url;
         $testimonial->type=$type;
         $testimonial->save();
         return $testimonial;
     }
 
-         public static function testimonial_update($id,$name,$testimonial,$url,$type)
+         public static function testimonial_update($id,$name,$testimonial_text,$url,$type)
     {
 
         $testimonial = Testimonial::find($id);
         $testimonial->name=$name;
-        $testimonial->testimonial=$testimonial;
+        $testimonial->testimonial=$testimonial_text;
         $testimonial->url=$url;
         $testimonial->type=$type;
         $testimonial->save();

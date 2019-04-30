@@ -3,7 +3,6 @@
 @section('content')
 <div class="container" style="margin-bottom:5%;margin-top:15%">
     
-        {{-- expr --}}
     
         <div class="row">
         <div class="col-6">
@@ -26,14 +25,14 @@
     </div>
 
     <div class="col-6">
-        <p style="font-size: 15pt;">{!!$testimonial->testimonial!!}</p>
+        <p style="font-size: 15pt;">{{$testimonial->testimonial}}</p>
     </div>
 
     
     </div>
      <div class="row">
       <div class="col-6">
-        <p style="font-size: 15pt;">{!!$testimonial->name!!}</p>
+        <p style="font-size: 15pt;">{{$testimonial->name}}</p>
     </div>
 </div>
     @endforeach

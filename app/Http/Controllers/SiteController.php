@@ -42,7 +42,7 @@ class SiteController extends Controller
 
     public function get_testimonials()
     {
-        $testimonial=Testimonial::get_testimonials();
+        $testimonials=Testimonial::testimonial_index();
         return view('main_site.testimonials',compact('testimonials'));
     }
 }

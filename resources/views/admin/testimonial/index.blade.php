@@ -31,6 +31,7 @@
                     <th>name</th>
                     <th>testimonial</th>
                     <th>url</th>
+                    <th>type</th>
                     <th>created_at</th>
                     <th>Operations</th>
 
@@ -41,8 +42,9 @@
                   <tr>
                     <td>{{$testimonial->id }}</td>
                     <td>{{$testimonial->name }}</td>
-                    <td>{!!$testimonial->testimonial !!}</td>
-                       <td><img class="img-responsive col-md" src="{{env('image_storage') }}/{{$testimonial->images[0]->image}}"></td>
+                    <td>{{$testimonial->testimonial}}</td>
+                       <td><img class="img-responsive col-md" src="{{env('image_storage') }}/{{$testimonial->url}}"></td>
+                       <td>{{$testimonial->type}}</td>
                     <td>{{$testimonial->created_at }}</td>
                     <td style="width: 17%;"><div class="container">
                       <div  class="row"><a style="margin-left:1%" href="/admin/{{Request::segment(2)}}/update/{{$testimonial->id}}"><button class="btn btn-primary" aria-hidden="true">Edit</button></a><a  style="margin-left:1%;color:rgba(204, 0, 0, 1);" onclick="return confirm('Are you sure you want to delete this testimonial')" href="/admin/{{Request::segment(2)}}/delete/{{$testimonial->id}}"><button class="btn btn-danger" aria-hidden="true">Delete</button></a></div>

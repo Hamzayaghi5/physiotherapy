@@ -13,12 +13,12 @@ class CreateTestimonialsTable extends Migration
      */
     public function up()
     {
-           Schema::create('testimonials', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('testimonials', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name', 500);
             $table->text('testimonial');
             $table->text('url');
-            $table->enum('type', ['image', 'video']);
+            $table->string('type', 500);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateTestimonialsTable extends Migration
      */
     public function down()
     {
-          Schema::dropIfExists('testimonials');
+        Schema::dropIfExists('testimonials');
     }
 }

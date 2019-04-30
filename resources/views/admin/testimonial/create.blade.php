@@ -20,12 +20,13 @@
 
 				<div class="form-group">
 		<label for="exampleInputEmail1">{{Request::segment(2)}}  testimonial</label>
-		<textarea name="testimonial" class="form-control summernote" rows="5" id="comment" required></textarea>
+		<textarea name="testimonial" class="form-control" rows="5" id="comment" required></textarea>
 		
 	</div>
 
 
-	<select class="browser-default custom-select" name="type">
+	<select class="browser-default custom-select" name="media_type">
+	<option selected>Select your type</option>
   <option value='image'>image</option>
   <option value='video'>video</option>
 </select>

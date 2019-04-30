@@ -1,7 +1,7 @@
 @extends('layouts.admin_layout')
 @section('content')
 	<div class="col-6">
-<form  class="container" action='/admin/{{Request::segment(2)}}/update/{{$service->id}}' method="POST" enctype="multipart/form-data">
+<form  class="container" action='/admin/{{Request::segment(2)}}/update/{{$testimonial->id}}' method="POST" enctype="multipart/form-data">
 	@csrf
 
 			<div class="form-group">
@@ -12,15 +12,15 @@
 
 				<div class="form-group">
 		<label for="exampleInputEmail1">{{Request::segment(2)}}  testimonial</label>
-		<textarea name="testimonial" class="form-control summernote" rows="5" id="comment" required>{{$testimonial->testimonial}}</textarea>
+		<textarea name="testimonial" class="form-control" rows="5" id="comment" required>{{$testimonial->testimonial}}</textarea>
 		
 	</div>
 
 
-	<select class="browser-default custom-select" name="type">
-  <option selected>Select your type</option>
-  <option value="1">image</option>
-  <option value="2">video</option>
+	<select class="browser-default custom-select" name="media_type">
+		  <option selected>Select your type</option>
+  <option value='image'>image</option>
+  <option value='video'>video</option>
 </select>
 
 	<label for="exampleInputEmail1">Image</label>

@@ -31,6 +31,8 @@
         for(var i = 0, length1 = pages.length; i < length1; i++){
         services_value+="<li><a href='/main"+pages[i].link+"' class='drop-text'>"+pages[i].name+"</a></li>";
         }
+        services_value+="<li><a href='/testimonials' class='drop-text'>Testimonials</a></li>";
+        
 
                 $("#why_choose_us").html(services_value);
      }

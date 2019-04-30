@@ -12,7 +12,7 @@ class TestimonialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+  public function index()
     {
         $testimonials=Testimonial::testimonial_index();
         return view('admin.testimonial.index',compact('testimonials'));
@@ -38,19 +38,18 @@ class TestimonialController extends Controller
     {
             $name=$request['name'];
             $testimonial=$request['testimonial'];
-            $type=$request['type'];
+            $type=$request['media_type'];
     if($request->hasFile('img_name'))
         {  
             $file=$request->file('img_name');                  
             $imagename=$file->getClientOriginalName();
-            $path_img=$file->storeAs('public/',$imagename);
+            $path_img=$file->storeAs('public/','img'.time().$imagename);
             $img_name=str_replace('public/', '', $path_img);
            $testimonial1= Testimonial::testimonial_create($name,$testimonial,$img_name,$type);
-            return $testimonial1;
-            // return redirect('/admin/testimonial/index');
+            return redirect('/admin/testimonial/index');
         }   
 
-            return Redirect::back()->withErrors('The image input must not be empty');
+            return redirect('/admin/testimonial/index');
     }
 
     /**
@@ -85,22 +84,23 @@ class TestimonialController extends Controller
      */
     public function update(Request $request, testimonial $testimonial)
     {
+            $id=$request['id'];
             $name=$request['name'];
             $testimonial=$request['testimonial'];
-            $type=$request['type'];
+            $type=$request['media_type'];
     if($request->hasFile('img_name'))
         {  
             $file=$request->file('img_name');                  
             $imagename=$file->getClientOriginalName();
-            $path_img=$file->storeAs('public/',$imagename.time());
+            $path_img=$file->storeAs('public/',$imagename);
             $img_name=str_replace('public/', '', $path_img);
-            Testimonial::testimonial_update($id,$name,$description,$img_name,$type);
+            Testimonial::testimonial_update($id,$name,$testimonial,$img_name,$type);
 
             return redirect('/admin/testimonial/index');
         }   
 
-        $testimonial=Testimonial::testimonial_show($id);
-          Testimonial::testimonial_update($id,$name,$description,$testimonial->image,$type);
+        $testimonial1=Testimonial::testimonial_show($id);
+          Testimonial::testimonial_update($id,$name,$testimonial,$testimonial1->url,$type);
            return redirect('/admin/testimonial/index');
     }
 
