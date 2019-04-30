@@ -23,11 +23,11 @@
 
         $("#youtube").html('<p><span class="fab fa-youtube mb-5"></span>'+contact.youtube+'</p>');
 
-        $("#address").html(' <i class="fas fa-map-marker-alt"></i>'+contact.address);
+        $("#address").html(' <i class="fas fa-map-marker-alt"></i><span style="font-weight:bold;">Address: </span>'+contact.address);
 
-        $("#email").html('<i class="far mr-1 fa-envelope-open"></i> <a href="mailto:'+contact.email+'">'+contact.email+'</a>');
+        $("#email").html('<i class="fa fa-envelope-open" aria-hidden="true"></i> <a href="mailto:'+contact.email+'">'+contact.email+'</a>');
 
-        $("#phone").html('  <i class="fas mr-1 fa-phone"></i>'+contact.phone);
+        $("#phone").html(' <i class="fa fa-phone" aria-hidden="true"></i>'+contact.phone);
 
         $("#phone1").html('<p style="font-size: 14px;" id="phone1">'+contact.phone+'</p>');
 

@@ -32,8 +32,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
     <link href="{{ asset('main_site/css/font-awesome.css') }}" rel="stylesheet">
+    
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  {{--   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> --}}
 
 
     <!-- //font-awesome-icons -->
@@ -47,23 +48,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <header class="py-sm-2 pt-3 pb-2" id="home">
         <div class="container-fluid">
             <!-- nav -->
-<!--             <div class="top d-md-flex">
-                <div id="logo">
-                    <img src="./images/logo.png" class="img-responsive" style="width:100px;height: 80px;">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="row">
+                <p id="email">
+                <a href="mailto:example@email.com">info@example.com</a>
+                </p>
                 </div>
-                <div class="search-form mx-md-auto">
-                    <div class="form-w3layouts-grid">
-                        <form action="#" method="post" class="newsletter">
-                            <input class="search" type="search" placeholder="Search..." required="">
-                            <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
-                        </form>
-                    </div>
+
+                <div class="row">
+                <p id="phone">+ 456 123 7890</p>
                 </div>
-                <div class="forms mt-md-0 mt-2">
-                    <a href="login.html" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
-                    <a href="register.html" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
+                <div class="row">
+                <p id="address">+ 90 nsequursu dsdesdc,
+                <br>xxx Honey State 049436.</p>  
                 </div>
-            </div> -->
+
+                </div>
+            </div>
+            </div>
             <nav class="text-center">
                 <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
                 <input type="checkbox" id="drop" />

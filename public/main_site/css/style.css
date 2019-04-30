@@ -79,7 +79,7 @@ header a.btn {
 }
 
 header a.btn span {
-    color: #00ac6b;
+    color: #8eba2d;
 }
 
 .search-form {
@@ -147,7 +147,7 @@ nav {
 }
 
 #logo a span {
-    color: #00ac6b;
+    color: #8eba2d;
     font-size: 1.4em;
 }
 
@@ -196,11 +196,11 @@ nav ul li ul li:hover {
 
 /* Background color change on Hover */
 nav a:hover {
-    color: #00ac6b;
+    color: #8eba2d;
 }
 
 .menu li.active a {
-    color: #00ac6b;
+    color: #8eba2d;
     font-weight: 700;
 }
 
@@ -235,7 +235,7 @@ nav ul ul li a {
 }
 
 ul.menu li span {
-    color: #00ac6b;
+    color: #8eba2d;
 }
 
 /* Second, Third and more Tiers	
@@ -474,7 +474,7 @@ li > a:only-child:after {
 
 .read-more,
 .book-appo {
-    background: #00ac6b;
+    background: #8eba2d;
     color: #fff;
     padding: 0.8em 2em;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
@@ -541,7 +541,7 @@ h3.title-w3pvt.two {
 .counter span {
     font-size: 2em;
     text-align: center;
-    color: #00ac6b;
+    color: #8eba2d;
     margin-bottom: 0.7em;
 }
 
@@ -885,7 +885,7 @@ h4.leave-w3layouts {
     border: none;
     padding: 1em 3em;
     text-decoration: none;
-    background: #00ac6b;
+    background: #8eba2d;
     cursor: pointer;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -990,7 +990,7 @@ h2 a.navbar-brand {
 }
 
 h2 a.navbar-brand span {
-    color: #00ac6b;
+    color: #8eba2d;
     font-size: 1.4em;
 }
 
