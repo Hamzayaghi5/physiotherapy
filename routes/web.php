@@ -100,3 +100,4 @@ Route::get('/main/{link}', 'SiteController@get_page');
 Route::get('/testimonials', 'SiteController@get_testimonials');
 
 
+Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@contactSaveData']);

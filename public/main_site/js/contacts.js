@@ -1,6 +1,6 @@
   function social() {
     $("#twitter1").html("");
-    $("#instagram").html("");
+    // $("#instagram").html("");_
     $("#youtube").html("");
     $("#address").html("");
     $("#email").html("");
@@ -18,8 +18,9 @@
 
         $("#facebook").attr("href","http://"+contact.facebook);
         $("#twitter").attr("href","http://"+ contact.twitter);
+        $("#twitter").attr("href","http://"+ contact.instagram);
         $("#twitter1").html('<p id="twitter1"><span class="fab fa-twitter"></span>'+contact.twitter+'</p>');
-        $("#instagram").html('<p><span class="fab fa-instagram"></span>'+contact.instagram+'</p>');
+        // $("#instagram").html('<p><span class="fab fa-instagram"></span>'+contact.instagram+'</p>');
 
         $("#youtube").html('<p><span class="fab fa-youtube mb-5"></span>'+contact.youtube+'</p>');
 
